@@ -4,5 +4,4 @@
 3-Script that compiles a file to output a name "cisfun" into the file "$CFILE" (gcc $CFILE -o cisfun)
 4-Program to write a sentence not using the printf but the puts ( see 4-puts.c for example)
 5-Program to write a sentence using the printf not the puts (see 5-printf.c for example)
-6-
-7-
+6-Program to list data types and their sizes (see 6-size.c for example)
