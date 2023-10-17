@@ -1,7 +1,7 @@
 0-Program with positive, negtive and zero random numbers (See 0-positive_negative.c for Example)
 1-Program with random numers ending number using different types of operators logical, arithmetic and relational (See 1-last_digit.c for example)
-2-
-3-
+2-Program to print alphabet in lowercase letter using putchar followed by new line (See 2-print_alphabet.c)
+3-Program to print alphabet in lower and uppercase followed by new line using putchar (See 3-print_alphabets.c for exmple)
 4-
 5-
 6-
