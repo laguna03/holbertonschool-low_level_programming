@@ -5,6 +5,6 @@
 4-Program to print the alphabet in lowecase without using printf and without the letters q and e (See 4-print_alphabt.c)
 5-Program that print single digit numbers from 0-9 using base 10 as ref with printf (See 5-print_numbers.c for example)
 6-Program that prints single digit numbers from 0-9 using putchar with base 10 as ref (See 6-print_numberz.c)
-7-
+7-Program to print all lowercase letters in reverse followed by a line using putchar (See 7-print_tebahpla.c)
 8-
 9-
