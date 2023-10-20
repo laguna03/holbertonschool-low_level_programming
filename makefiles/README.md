@@ -1,0 +1,1 @@
+Checking before taking notes
