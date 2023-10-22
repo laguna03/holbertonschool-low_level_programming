@@ -10,6 +10,6 @@ void print_numbers(void)
 	for (c = 48; c < 58; c++)
 	{
 		_putchar(c);
-		_putchar('\n');
 	}
+		_putchar('\n');
 }
