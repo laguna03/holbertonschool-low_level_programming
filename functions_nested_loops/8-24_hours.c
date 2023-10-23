@@ -1,33 +1,21 @@
 #include "main.h"
 /**
- * jack_bauer - Prints every minute of the day of Jack BUER
- * Return: ...
- */
-
+ *  *  * jack_bauer - lalala
+ *    *    * Return: last digit of r
+*/
 void jack_bauer(void)
-
 {
-	int a, b, c, d;
-
-	for (a = 0; a <= 2; a++)
+int num1, num2;
+for (num1 = 0; num1 <= 23; num1++)
+{
+	for (num2 = 0; num2 < 60; num2++)
 	{
-		for (b = 0; b <= 9; b++)
-		{
-			if ((a <= 1 && b <= 9) || (a <= 2 && b <= 3))
-			{
-				for (c = 0; c <= 5; c++)
-				{
-					for (d = 0; d <= 9; d++)
-					{
-						_putchar(a + '0');
-						_putchar(b + '0');
-						_putchar(58);
-						_putchar(c + '0');
-						_putchar(d + '0');
-						_putchar('\n');
-					}
-				}
-			}
-		}
+		_putchar((num1 / 10) + '0');
+		_putchar((num1 % 10) + '0');
+		_putchar(':');
+		_putchar((num2 / 10) + '0');
+		_putchar((num2 % 10) + '0');
+		_putchar(10);
 	}
+}
 }
