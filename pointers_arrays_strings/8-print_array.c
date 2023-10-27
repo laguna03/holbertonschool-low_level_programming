@@ -22,6 +22,6 @@ void print_array(int *array, int number)
 					{
 					printf("%d, ", array[count]);
 					}
+	}
 	printf("\n");
-}
 }
