@@ -1,4 +1,3 @@
-#!/bin/bash
 #include "main.h"
 /**
  * _isupper -program to check for uppercase characters.

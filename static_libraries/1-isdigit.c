@@ -1,4 +1,3 @@
-#!/bin/bash
 #include "main.h"
 /**
  * _isdigit - Function that checks for digit 0-9
