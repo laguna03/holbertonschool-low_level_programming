@@ -1,3 +1,4 @@
+#!/bin/bash
 #include "main.h"
 /**
  * _puts - function to print an array of characters(a string) to the stdout

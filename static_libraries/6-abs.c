@@ -1,3 +1,4 @@
+#!/bin/bash
 #include "main.h"
 /**
  * _abs - Computes thge absolute value of an integer.
