@@ -1,1 +1,1 @@
-first static library creation
+My first static library
