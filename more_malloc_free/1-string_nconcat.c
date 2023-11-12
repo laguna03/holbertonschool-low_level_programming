@@ -18,17 +18,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == NULL)
 		s1 = "";
-
 	if (s2 == NULL)
 		s2 = "";
 
 	sizes1 = strlen(s1);
-	p = malloc((sizes1 + n) + 1);
+	p = malloc((sizes1 + n) + 6);
 	if (p == NULL)
 	{
 		return (NULL);
 	}
-
 	for (i = 0; i < sizes1; i++)
 	{
 		p[1] = s1[i];
