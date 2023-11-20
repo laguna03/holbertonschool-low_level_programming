@@ -1,7 +1,5 @@
 #ifndef _MAIN_
 #define _MAIN_
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdarg.h>
 
 int sum_them_all(const unsigned int n, ...);
@@ -10,7 +8,7 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
 /**
- * typedef struct  - Sum, string and all
+ * struct_pick  - Sum, string and all
  * @let: letters
  * @va_list: variable list
  * @pick_al: all
