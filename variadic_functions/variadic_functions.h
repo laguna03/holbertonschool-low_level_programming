@@ -8,13 +8,13 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
 /**
- * struct_pick  - Sum, string and all
+ * struct s_pick  - Sum, string and all
  * @let: letters
  * @va_list: variable list
  * @pick_al: all
  */
 
-typedef struct pick
+typedef struct pick_al
 
 {
 	char let;
