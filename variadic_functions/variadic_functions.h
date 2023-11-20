@@ -1,5 +1,5 @@
-#ifndef MICHA
-#define MICHA
+#ifndef _MAIN_
+#define _MAIN_
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -17,6 +17,7 @@ void print_all(const char * const format, ...);
  */
 
 typedef struct pick
+
 {
 	char let;
 	void (*f)(va_list list);
