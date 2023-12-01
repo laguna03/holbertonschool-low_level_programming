@@ -10,30 +10,29 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-list_t *new;
-new = malloc(sizeof(list_t));
 
-if (!new)
+list_t *new = malloc(sizeof(list_t));
+
+if (str == NULL)
 {
 return (NULL);
 }
-new->str = (char *)str;
-new->next = NULL;
 
-if (*head == NULL)
+if (new == NULL)
 {
-*head = new;
+return (NULL);
 }
 
-else
+new->str = strdup(str);
+
+if (new->str == NULL)
 {
-list_t *current = *head;
-while (current->next != NULL)
-{
-current = current->next;
+free(new);
+return (NULL);
 }
-current->next = new;
-}
+new->next = *head;
+
+*head = (new);
 
 return (new);
 }
