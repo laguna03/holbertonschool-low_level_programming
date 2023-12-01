@@ -18,8 +18,6 @@ if (!new)
 return (NULL);
 }
 
-new->next = strdup(str);
-new->len = strlen(str);
 new->next = NULL;
 new->next = *head;
 *head = NULL;
