@@ -8,34 +8,25 @@
  * Return: Null or address of element
  */
 
-list_t *add_node(list_t **head, char *str)
+list_t *add_node(list_t **head, const char *str)
 {
-char *new;
-int i = 0;
-list_t *tmp;
+list_t *new;
+new = malloc(sizeof(list_t));
+if (!new)
+{
+return (NULL);
+}
 
-if (!(*head))
+new->str = (char *) str;
+new->next = NULL;
+
+if (*head == NULL)
 {
-*head = malloc(sizeof(list_t));
-(*head)->next = NULL;
+*head = new;
 }
 else
-while ((*head)->next != NULL)
 {
-    i++;
-    (*head) = (*head)->next;
-    }
-    new = strdup(str);
-    tmp = malloc(sizeof(list_t));
-    if (tmp == NULL || new == NULL)
-    return (NULL);
 
-    else
-    {
-        tmp->str = new;
-        tmp->next = NULL;
-        (*head)->next = tmp;
-        (*head) = (*head)->next;
-        }
-        return (*head);
+}
+return (new);
 }
