@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lists.h"
 /**
 * print_dlistint - Print lists dou
