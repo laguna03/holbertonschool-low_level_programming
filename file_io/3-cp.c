@@ -1,49 +1,66 @@
 #include "main.h"
 /**
- * main - Copies the content of a file to another file
- * @argc: int
- * @argv: pointer argv
- * Return: Return 0 if successful, otherwise return error code
+ * main - main function
+ * @argc: count of arguments
+ * @argv: array of arguments
+ * Return: number
  */
-int main(int argc, char *argv[])
-{
-	char *buffer;
-	int cl1, cl2, fdir_from, fdir_to, rd;
 
-	buffer = malloc(1024);
-	if (!buffer)
-		return (-1);
-	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
-	}
-	fdir_from = open(argv[1], O_RDONLY, 0664);
-	if (fdir_from < 0)
-	{
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	}
-	fdir_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while ((rd = read(fdir_from, buffer, 1024)) > 0)
-	{
-		rd = read(fdir_from, buffer, 1024);
-		if (fdir_to < 0 || (write(fdir_to, buffer, rd) != rd))
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-		}
-	}
-	if (rd < 0)
-	{
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	}
-	cl1 = close(fdir_from);
-	if (cl1 < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdir_from), exit(100);
-	}
-	cl2 = close(fdir_to);
-	if (cl2 < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdir_to), exit(100);
-	}
-	return (0);
+int main(int argc, char *argv[])
+
+{
+int fd_from = -1, fd_to = -1, count_r, count_w;
+char *file_f = argv[1];
+char *file_t = argv[2];
+char *buff[1024];
+
+if (argc != 3)
+error_and_exit("cp file_from file_to", NULL, 97);
+
+fd_from = open(file_f, O_RDONLY);
+if (fd_from == -1 || file_f == NULL)
+error_and_exit("Can't read from file", file_f, 98);
+
+fd_to = open(file_t, O_CREAT | O_TRUNC | O_WRONLY, 0664);
+if (fd_to == -1 || file_t == NULL)
+error_and_exit("Can't write to", file_t, 99);
+
+while (1)
+{
+count_r = read(fd_from, buff, 1024);
+if (count_r == 0)
+break;
+if (count_r == -1)
+error_and_exit("Can't read from file", file_f, 98);
+count_w = write(fd_to, buff, count_r);
+if (count_w == -1)
+error_and_exit("Can't write to", file_t, 99);
+}
+if (close(fd_from) == -1)
+error_and_exit("Can't close fd", file_f, 100);
+if (close(fd_to) == -1)
+error_and_exit("Can't close fd", file_t, 100);
+return (0);
+}
+
+/**
+ * error_and_exit - function to help with errors
+ * @message: message to add
+ * @filename: filename
+ * @exit_code: exit code of the error
+ */
+
+void error_and_exit(const char *message, const char *filename, int exit_code)
+
+{
+if (filename == NULL)
+{
+dprintf(STDERR_FILENO, "Usage: %s\n", message);
+exit(exit_code);
+}
+else
+{
+dprintf(STDERR_FILENO, "Error: %s %s\n", message, filename);
+exit(exit_code);
+}
 }
